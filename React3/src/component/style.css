@@ -1,0 +1,26 @@
+/* styles.css (or another CSS file) */
+
+/* styles.css (or another CSS file) */
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ea0b0b;
+}
+
+.employee-table th, .employee-table td {
+  border: 1px solid #0f0606;
+  padding: 5px;
+  text-align: center;
+  width: 250px; /* Set the width of each cell */
+  height: 50px; /* Set the height of each cell */
+}
+
+
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
