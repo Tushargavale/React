@@ -5,47 +5,30 @@ let CORS=require('cors')
 app.use(bodyparser.json())
 app.use(CORS())
 
-
-
-let USER=[]
-
-
-let counter=10;
-
-app.get('/data',(req,resp)=>{
-   
-    resp.send(USER)
-})
-
-app.post('/add',(req,resp)=>{
-    let D=req.body
-    USER.push(D)
-
-    resp.send(USER)
-    
-})
-function deleted(data)
-{
-    console.log(data+"   FRom DELETED FUNCTION")
-    for(let i=0;i<USER.length;i++)
-    {
-        if (USER[i].Name === data.Name) {
-            USER.splice(i, 1); // Use splice to remove the element
-            break; // Exit the loop once the element is found and removed
-        }
-    console.log(USER)
-    }
+let obj={
+    id:"manoj",
+    Pass:"manoj@123"
 }
 
 
-
-app.post('/delete',(req,resp)=>{
-    let data=req.body
-    console.log(USER.length)
-    deleted(data)
-    console.log('Data is Deleted From USER')
-    resp.send("DATA IS DELETED")
+let USER=[]
+USER.push(obj)
+    app.post('/login',(req,resp)=>{
+    let Data=req.body
+    // if(Data.id=="tusahr@123" &&  Data.pass == "T@123ushar" )
+    // {
+    //     USER.push(Data)
+    //     resp.send('LOGIN')
+    // }else{
+    //         resp.send('WRONG')
+    // }
+        console.log(Data)
+        USER.push(Data)
+        console.log('Visited')
+    resp.send(USER)
+    
 })
+
 
 
 
