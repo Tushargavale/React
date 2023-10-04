@@ -1,0 +1,53 @@
+/* CourseSellingWebsite.css */
+
+/* Styles for the entire homepage */
+.homepage {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ee8d8d;
+    padding: 20px;
+  }
+  
+  header {
+    background-color: rgb(232, 16, 16);
+    color: #fff;
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  main {
+    padding: 20px;
+    background-color: yellow;
+  }
+  
+  /* Styles for buttons */
+  #btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    background-color: #e878d7;
+  }
+  
+  .login-btn {
+    background-color: #007BFF;
+    color: #fff;
+  }
+  
+  .signup-btn {
+    background-color: #28A745;
+    color: #fff;
+  }
+  
+  .login-btn:hover,
+  .signup-btn:hover {
+    background-color: #0056b3;
+  }
+  
