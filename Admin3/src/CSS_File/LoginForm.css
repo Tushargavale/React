@@ -78,6 +78,10 @@
   align-content: flex-start; /* Start a new row when needed */
   max-width: 900px; /* Adjust the maximum width as needed */
   margin: 0 auto; /* Center the container */
+  background-color: aqua;
+  border: #dd3c0f;
+  padding: 10px;
+  
 }
 
 /* Adjust card width for a maximum of 3 cards per row */

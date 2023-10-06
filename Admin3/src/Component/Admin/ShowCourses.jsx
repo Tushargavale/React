@@ -2,9 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
 import '../../CSS_File/LoginForm.css'
+import { useNavigate } from 'react-router-dom';
+
 function ShowCourses()
 {
-   
+   let navigate=useNavigate()
     let [courses,setCourses] = useState([])
 
     useEffect(()=>{
@@ -14,15 +16,22 @@ function ShowCourses()
         })
     },[])
 
+    function back()
+    {
+       navigate('/Login')
+    }
     return <div   >
-        <h1>All</h1>
-        <div className="card-container" >
+      <button onClick={back} >Back</button>
+        <div className="card-container" > 
         {courses.map((entry)=>{
-            return   <CourseCard data={entry} ></CourseCard> 
-        
+            return <div  > <CourseCard data={entry}  > </CourseCard>
+            
+             </div> 
+            
         })}</div>
     </div>
 
 }
+
 
 export default ShowCourses

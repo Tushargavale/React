@@ -20,7 +20,12 @@ function Login()
     }
     function goback()
     {
-
+        navigate('/AddNewCourse')
+    }
+    function update()
+    {
+        console.log('updated')
+        navigate('/Update')
     }
 
 
@@ -32,8 +37,8 @@ function Login()
         <h2>Welcome</h2>
        
           <input type="button" value="View Courses" className='btn-login' onClick={viewCourses} /> <br/>        
-             <input type="button" value="Update Courses" className='btn-back' onClick={goback}   /> <br></br>
-             <input type="button" value="Add New Course" className='btn-login'  /> <br/>        
+             <input type="button"  value="Add New Course"  className='btn-back' onClick={goback}   /> <br></br>
+             <input type="button" value="Update Course" className='btn-login' onClick={update}  /> <br/>        
         
         
       </div>
