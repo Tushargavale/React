@@ -1,0 +1,31 @@
+tr {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  td {
+    flex: 1;
+    margin: 5px;
+    padding: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  select {
+    background-color: #e7c5c5;
+    cursor: pointer;
+  }
+  
