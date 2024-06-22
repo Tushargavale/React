@@ -1,28 +1,85 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 import {increment} from './Feature/CounterSlice'
+import { fetchTodo } from './Feature/CounterSlice'
 
 function App() {
-/**
- * This increment function is a basically action creater , it creae a action or we can say that it take a argument and return a acton object
- * 
- * 
- * 
- */
-let Count=useSelector(state=>state.counter)
-//console.log(increment(10))
+
+function storeDataAsync(key, value) {
+    return new Promise((resolve, reject) => {
+        try {
+            localStorage.setItem(key, JSON.stringify(value));
+            resolve(true);
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+
+
+
+
+
+
+
+const [id,setId]=useState(100)
+let Count=useSelector(state=>{
+
+  return state.counter
+})
+
 const dispatch=useDispatch()  
 const Fun=()=>{
-//dispatch(increment(10))
-dispatch({type: 'counter/increment', payload: 10})
-//console.log(Count)
+
+dispatch(increment())
+console.log(Count)
 }
+useEffect(()=>{
+ // dispatch(fetchTodo())
+
+},[])
+
+
+
+
+
+
+useEffect(()=>{
+  dispatch(fetchTodo())
+},[])
+
+
+
+const addTodo=async()=>{
+  let todo={
+    Task:"Playing Cricket",
+    id:id+5
+  }
+  setId(id=>id+5)
+  let Arr=[todo]
+  let r=await storeDataAsync('todos',Arr)
+  
+
+}
+
+
+
+
+
+
+const refresh=()=>{
+  dispatch(fetchTodo())
+}
+
 
 
   return (
     <>
     <button onClick={Fun} >  Increse</button> 
     <br /><br />
+    <button onClick={addTodo} >AddNewTodo</button>
+    <button onClick={refresh} >Refresh Todo</button>
     <h1>{JSON.stringify(Count)}</h1>
     </>
   )
