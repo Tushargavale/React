@@ -30,6 +30,11 @@ export const counterSlice=createSlice({
            console.log('Dispatch is in Procgress')
         },
         decrement:(state,action)=>{
+            setTimeout(() => {
+            //   state=state+1
+                 console.log('Value is Updated')
+                
+            }, 1000);
         }
     },
     extraReducers:builder=>{
@@ -49,7 +54,7 @@ export const counterSlice=createSlice({
     }
 })
 
-export const {increment} =counterSlice.actions  
+export const {increment , decrement} =counterSlice.actions  
 
 //console.log(counterSlice.actions)     
 //console.log(counterSlice.reducer)

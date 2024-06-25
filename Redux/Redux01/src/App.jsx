@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import {useDispatch,useSelector} from 'react-redux'
-import {increment} from './Feature/CounterSlice'
+import {increment ,decrement} from './Feature/CounterSlice'
 import { fetchTodo } from './Feature/CounterSlice'
 
 function App() {
@@ -32,7 +32,7 @@ let Count=useSelector(state=>{
 const dispatch=useDispatch()  
 const Fun=()=>{
 
-dispatch(increment())
+dispatch(decrement())
 console.log(Count)
 }
 useEffect(()=>{
@@ -46,6 +46,9 @@ useEffect(()=>{
 
 
 useEffect(()=>{
+  const Fun=async()=>{
+    //await dispatch(fetchTodo())
+  }
   dispatch(fetchTodo())
 },[])
 
