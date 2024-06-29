@@ -45,7 +45,8 @@ function retrieveObjectFromLocalStorage(key) {
       const obj = JSON.parse(jsonString);
 
       if (obj === null) {
-       return null
+
+       resolve('null')
       }
 
     //   console.log(`Object retrieved from key: ${key}`);
@@ -98,14 +99,20 @@ export const VerifyUser=createAsyncThunk('userSlice/VerifyUser',async(id=null,th
 try{
   let state=thunkAPI.getState()
   let user=state.User.userToken   
+ 
   if(user!=null)
     {
       return user
     }else
  {
+  console.log('before retrive localstor')
     let user=await retrieveObjectFromLocalStorage('user')
-    if(user===null)
+    console.log('afetr rerive localstorage')
+    console.log(user)
+    if(user===null || user==='null' ){
+
       return null
+    }
     else
     return user
   }
@@ -158,12 +165,24 @@ export const UserSlice=createSlice({
             state.userinfo.username=action.payload.username
             state.userinfo.password=action.payload.password
             state.userToken=action.payload.Token
+            state.state='success'
         }),
         builder.addCase(VerifyUser.fulfilled,(state,action)=>{
+          console.log(action.payload)
+          if(action.payload===null){
+           console.log('before state'  , state.state)
+            state.state='fail'
+            console.log('after state ',state.state)
+          }
+          
+          else{
           state.state='success'
           state.userToken=action.payload.Token
+          }
+         
         }),
         builder.addCase(VerifyUser.pending,(state,action)=>{
+          console.log('Pending STATE')
         state.state='pending'
         })
         ,

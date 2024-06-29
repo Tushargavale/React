@@ -15,44 +15,6 @@ const dispatch=useDispatch()
 
 const navigation=useNavigate()
 
-function retrieveObjectFromLocalStorage(key) {
-  return new Promise((resolve, reject) => {
-    try {
-      // Retrieve the JSON string from localStorage
-      const jsonString = localStorage.getItem(key);
-
-      // Parse the JSON string back into an object
-      const obj = JSON.parse(jsonString);
-
-      if (obj === null) {
-        // throw new Error(`No data found under key: ${key}`);
-        return null
-      }
-
-    //   console.log(`Object retrieved from key: ${key}`);
-      resolve(obj);
-    } catch (error) {
-      console.error('Error retrieving object from localStorage:', error);
-      reject(error);
-    }
-  });
-}
-
-    //   const user=useSelector((state)=>state.User.userToken)
-
-
-
-
-    // useEffect(()=>{
-    //  dispatch(VerifyUser())
-    // },[])  
-    
-    // useEffect(()=>{
-   
-    //    if(!user)
-    //    navigation('/')
-    // },[user])
-
 
 const FUN=()=>{
   localStorage.removeItem('user')

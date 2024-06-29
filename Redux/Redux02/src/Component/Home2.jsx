@@ -13,18 +13,18 @@ const Navigation=useNavigate()
 
     useEffect(()=>{
      dispatch(VerifyUser())
-     console.log(user)
+  //   console.log(user)
     },[])  
     
 
 
     useEffect(()=>{
-        console.log(user)
+    //    console.log(user)
         if(user.state==='fail')
           Navigation('/')
     },[user])
 
-
+console.log('HOME2 componeny is Re-render')
   
 
 
