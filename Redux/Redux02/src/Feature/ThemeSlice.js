@@ -4,7 +4,22 @@ const initialState={
     theame:'bg-black'
 }   
 
-
+export const getTheme=createAsyncThunk('theme/fetchTheme',async()=>{
+      new Promise((resolve, reject) => {
+        try {
+            const value = localStorage.getItem(key);
+            if(value){
+                
+                console.log('22')
+                resolve(value)
+            }
+              else 
+        resolve('NOT RESOLVED')
+        } catch (error) {
+            reject(error);
+        }
+    });
+})
 
 
 export const ThemeSlice=createSlice({
@@ -18,8 +33,16 @@ export const ThemeSlice=createSlice({
             else
             state.theame='bg-white'
    
-        }
+        },
+        
     },
+    extraReducers:builder=>{
+        builder.addCase(getTheme.fulfilled,(state,action)=>{
+            console.log('***************')
+            console.log(action.payload)
+        })
+        
+    }
    
 
 })
