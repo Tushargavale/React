@@ -24,7 +24,7 @@ function Protocted({child}) {
 
     const [loader,setLoader]=useState(true)
     useEffect(()=>{
-        console.log(Auth)
+      //  console.log(Auth)
         if(!Auth)
             navigate('/login')
         else

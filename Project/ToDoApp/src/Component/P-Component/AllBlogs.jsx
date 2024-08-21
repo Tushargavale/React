@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-// import Arr from '../../Blog'
+import {Query} from 'appwrite'
 import BlogCard from '../../Pages/BlogCard'
 import {useDispatch,useSelector} from 'react-redux'
 import {loginUser,getAllPost} from '../../Redux/AsyncThunk'
@@ -9,18 +9,22 @@ function AllBlogs(){
 const dispatch=useDispatch()
 const [post,setPost]=useState([])
 const blogs=useSelector((state)=>state.Blogs)
+const userID=useSelector((state)=>state.Auth.userInfo.$id)
 
+//Query.or([Query.equal('option','public'),Query.equal('userID','userID')])
     useEffect(()=>{
-       dispatch(getAllPost())
+        let queries=[Query.or([Query.equal('option','public'),Query.equal('userID',userID)])]
+       dispatch(getAllPost(queries))
      
     },[])
     // dispatch(getAllPost())
     useEffect(()=>{
-        console.log(blogs)
+      
         if(blogs.state=='success')
         {
+            if(blogs.AllBlog.length>0)
             setPost(blogs.AllBlog)
-            console.log(blogs)
+          
         }
     },[blogs])
 
@@ -31,14 +35,18 @@ const blogs=useSelector((state)=>state.Blogs)
   <>
    <div className="container mx-auto p-4">
             <div className="flex flex-wrap justify-center">
-                {post.map((blog, index) => (
+                {/* {post.length>0?<>
+                
+                
+                </>:<></>} */}
+                {   post.map((blog, index) => (
                     <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
                         <BlogCard
                             title={blog.title}
-                            slug={blog.slug}
+                            slug={blog.$id}
                             content={blog.content}
                             option={blog.option}
-                            user={blog.user}
+                            user={blog.userID}
                         />
                     </div>
                 ))}

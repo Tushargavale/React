@@ -1,15 +1,23 @@
 import { logoutUser } from '../../Redux/AsyncThunk'
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function LogoutButton(props) {
+
+  const state=useSelector((state)=>state.Auth.status)
   const navigate=useNavigate()
   const dispatch=useDispatch()
     const Logout=()=>{
       dispatch(logoutUser())
-      navigate('/Login')
+    //  navigate('/Login')
     }
+
+    useEffect(()=>{
+      if(!state)
+        navigate('Login')
+
+    },[state])
 
 
 

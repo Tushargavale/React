@@ -2,7 +2,7 @@ import {createSlice,current} from '@reduxjs/toolkit'
 import { getAllPost ,submitPost,updatePost } from './AsyncThunk'
 import Blog from '../Blog'
 const initialState={
-    AllBlog:Blog,
+    AllBlog:[],
     currentBlog:[],
     state: 'null' | 'pending' | 'success' |  'reject'
 }
@@ -21,7 +21,9 @@ const BlogSlice=createSlice({
     extraReducers:(builder)=>{
         builder.addCase(getAllPost.fulfilled,(state,payload)=>{
         state.state='success'
-        
+        state.AllBlog=payload.payload.documents
+        console.log(payload.payload.documents)
+  
         }),
         builder.addCase(getAllPost.pending,(state)=>{
            state.state='pending'

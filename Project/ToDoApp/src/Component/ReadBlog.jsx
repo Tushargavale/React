@@ -7,17 +7,16 @@ import parse from 'html-react-parser'
 function ReadBlog() {
 const navigate=useNavigate()
 const blog=useSelector((state)=>state.Blogs.currentBlog)
-const user=useSelector((state)=>state.Auth.userInfo.username)
+const user=useSelector((state)=>state.Auth.userInfo.$id)
 const [editable,setEditable]=useState(false)
 const [state,setState]=useState()
 
 useEffect(()=>{
   console.log(user)
     console.log(blog)
-  if(user===blog.user)
+  if(String(user)===blog.user)
   {
-  
-    setEditable(true)
+     setEditable(true)
   }
 setState(blog)
 },[blog])
@@ -25,13 +24,13 @@ setState(blog)
 
 
 
+
 const Edit=()=>{
    navigate(`/Edit/${blog.slug}`)
 }
+ 
 
-
-
-  return (
+return (
     <>
    {state?<>
     <div className="container mx-auto p-4">

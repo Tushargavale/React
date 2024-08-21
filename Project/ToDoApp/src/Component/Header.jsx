@@ -3,6 +3,7 @@ import Container from './Container';
 import {Link,useNavigate} from 'react-router-dom'
 import LogoutButton from '../Component/FormComponent/LogoutButton'
 import { useSelector } from 'react-redux';
+import authservice from '../../Appwrite/Auth';
 
 function Header() {
   
@@ -10,11 +11,7 @@ function Header() {
     let Authstate=useSelector((state)=>state.Auth.status)
 
     let NavItem=[
-        {
-            name:'Home',
-            slug:'/Home',
-            value:Authstate
-        },
+      
         {
             name:'Login',
             slug:'/Login',
@@ -40,6 +37,12 @@ function Header() {
     ]
   
     // console.log('Header is Render')
+
+    const getUser=async()=>
+    {
+      const data=await authservice.getCurrentUser()
+      console.log(data)
+    }
   
   
   
@@ -84,11 +87,21 @@ function Header() {
 
            
 
-            {Authstate && (
+            {/* {Authstate && (                     // uncomment this after all work completion      */}   
+                {true && (
               <li>
                 <LogoutButton className="inline-block px-6 py-2 bg-white text-blue-600 rounded-full hover:bg-blue-100 transition duration-200" />
               </li>
             )}
+
+
+            {
+              <button onClick={getUser} >getUser</button>
+            }
+
+
+
+
           </ul>
         </nav>
       </Container>

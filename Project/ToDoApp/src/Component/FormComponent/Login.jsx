@@ -25,6 +25,7 @@ function Login() {
 
 
 const loginform=(data)=>{
+  console.log('LoginForm Function RUn')
   console.log(data)
     dispatch(loginUser(data))
 }
@@ -35,13 +36,13 @@ const loginform=(data)=>{
          <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4 py-8">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">login</h2>
-        <form className="space-y-4 j  "  onClick={handleSubmit(loginform)}  >
+        <form className="space-y-4 j  "  onSubmit={handleSubmit(loginform)}  >
           <Input
             type="text"
             id="username"
             label="username"
             placeholder="enter your username"
-            {...register('username',{required:true})}
+            {...register('email',{required:true})}
           />
       
           <Input

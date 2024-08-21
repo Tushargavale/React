@@ -6,7 +6,7 @@ import Selector from "../FormComponent/Selector";
 import parse from 'html-react-parser'
 import {useNavigate,useLocation} from 'react-router-dom'
 import {submitPost,updatePost} from '../../Redux/AsyncThunk.js'
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 
 
 
@@ -18,6 +18,8 @@ const {state}= useLocation()
 // const post=state
 const navigate=useNavigate()
 
+const userID=useSelector((state)=>state.Auth.userInfo.$id)
+console.log(userID)
 
   const id = useId();
   const { getValues, setValue, register, watch, control, handleSubmit } =
@@ -38,12 +40,13 @@ const {content,title,slug,option} =data
 // console.log({content,title,slug,option})
   if(post)
   {
-    console.log('Post is start for update')
-    dispatch(updatePost({content,title,slug,option,user:'admin'}))
+    
+    dispatch(updatePost({content,title,slug,option,userID}))
     // dispatch(updatePost()).then((data)=>console.log(data)).catch((err)=>console.log(err))
     navigate('/AllBlogs')
   }else{
-    dispatch(submitPost({content,title,slug,option}))
+    dispatch(submitPost({content,title,slug,option,userID}))
+  
     navigate('/AllBlogs')
   }
 

@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Input from "./Input"; 
-
+import { useNavigate } from "react-router-dom";
 // import React from 'react'
+import { signUpUser } from "../../Redux/AsyncThunk"; 
+import { useDispatch,useSelector } from "react-redux";
 import {useForm} from 'react-hook-form'
 
 function Signup() { 
-
+  const navigate=useNavigate()
+    const state=useSelector((state)=>state.Auth.status)
+    const dispatch=useDispatch()
     const {handleSubmit,register} =useForm()
 
     const Signup=(data)=>{
-        console.log(data)
-        console.log('Signup Successfully')
+     //   console.log(data)
+      dispatch(signUpUser(data))
     }
+
+
+    useEffect(()=>{
+      if(state)
+      {
+        navigate('/Home')
+      }
+    },[state])
 
 
   return (

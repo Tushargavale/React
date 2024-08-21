@@ -1,4 +1,4 @@
-import { useState ,useEffect } from 'react'
+import { useState ,useEffect ,useRef } from 'react'
 import Navbar from './Component/Navbar'
 import Blog from './Component/Blog'
 import { changeTheme } from './Feature/ThemeSlice'
@@ -10,6 +10,7 @@ import './App.css'
 import { setUser ,logoutUser } from './Feature/UserSlice'
 import { useNavigate } from 'react-router-dom'
 import { VerifyUser } from './Feature/UserSlice'
+import EditorT from './Component/Editor'
 function App() {
 const dispatch=useDispatch()
 
@@ -25,13 +26,28 @@ const FUN=()=>{
 
 }
 
+let ref=useRef(true)
+
+
+
+useEffect(() => {
+  console.log(ref)
+
+
+}, [])
+
+
   
 
   return (
     <>
-   <button onClick={FUN} >Logout</button>
+   {/* <button onClick={FUN} >Logout</button> */}
    <br /><br /><br />
-   <Routr></Routr>
+    <Routr></Routr> 
+   {/* {/* <EditorT></EditorT>  */}
+
+
+
     </>
   )
 }
