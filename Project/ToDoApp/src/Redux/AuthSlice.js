@@ -21,7 +21,7 @@ export const AuthSlice=createSlice({
            state.status=false
         }),
         builder.addCase(fetchUSer.fulfilled,(state,payload)=>{
-            console.log('ful')
+           
             state.status=true
             state.userInfo=payload
         }),

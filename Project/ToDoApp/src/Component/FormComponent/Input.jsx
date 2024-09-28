@@ -11,10 +11,11 @@ const Input=React.forwardRef(({
 
 const id=useId() 
 
-// console.log('Input Component Render',label)
+
+
 return(<>
 
- <div className="w-full flex flex-col">
+      <div className="w-full flex flex-col">
       {label && (
         <label
           className="inline-block mb-1 text-sm font-medium text-gray-700 pl-1"

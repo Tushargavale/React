@@ -75,6 +75,7 @@ useEffect(()=>{
               type="title"
               id="title"
               label="Title"
+              
               placeholder="title"
              {...register('title',{required:true}   )  }
               
