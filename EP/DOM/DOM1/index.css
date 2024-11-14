@@ -1,0 +1,12 @@
+.black{
+    background-color: bisque;
+    color: red;
+    border: 15pt;
+    border-color: black;
+}
+
+
+.Parent{
+    background-color: aqua;
+    padding: 50px;
+}

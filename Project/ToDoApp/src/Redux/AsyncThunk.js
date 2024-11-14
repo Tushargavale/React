@@ -8,7 +8,7 @@ import DBService from '../../Appwrite/DBConfig'
 
 export const fetchUSer=createAsyncThunk('Auth/fetchUser',async()=>{
 
-
+ 
 
 })
 

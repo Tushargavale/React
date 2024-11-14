@@ -13,6 +13,7 @@ import { MAXIMUM_SUB_IMAGE_COUNT } from "../../../constants.js";
 import { Category } from "../../../models/apps/ecommerce/category.models.js";
 
 const getAllProducts = asyncHandler(async (req, res) => {
+  console.log(req.body)
   const { page = 1, limit = 10 } = req.query;
   const productAggregate = Product.aggregate([{ $match: {} }]);
 
