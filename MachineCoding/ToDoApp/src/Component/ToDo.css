@@ -1,0 +1,22 @@
+.todo{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    gap: 10px;
+    border: 3px rgb(230, 206, 206) solid;
+   
+}
+
+
+input{
+    padding: 3px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+   
+}
+
+span{
+    margin: 2px;
+}
