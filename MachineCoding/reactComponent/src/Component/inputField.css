@@ -1,0 +1,30 @@
+
+
+.container{
+   background-color: white;
+   padding: 10px;
+}
+
+button{
+    padding: 5px;
+}
+
+li{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 35px;
+}
+
+input{
+    width: 400px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    padding: 5px;
+
+}
+
+button{
+    width: 100px;
+}

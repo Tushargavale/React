@@ -42,8 +42,8 @@ const [loc,setLoc]=useState()
      {data ? <>
      
       <div className='city-name' >{data.name}</div>
-      <div className="description">{`Current Temperature: ${data.main.temp} F`}</div> 
-          <div className="description">{`Description: ${data.weather[0].description} F`}</div> 
+           <div className="description">{`Current Temperature: ${data.main.temp} F`}</div> 
+           <div className="description">{`Description: ${data.weather[0].description} F`}</div> 
           <div className="description">{`Max Temperature: ${data.main.temp_max} F`}</div> 
           <div className="description">{`Min Temperature: ${data.main.temp_min} F`}</div> 
           <div className="description">{`Humidity: ${data.main.humidity} F`}</div> 
