@@ -1,4 +1,10 @@
 
+let parent=document.querySelector('.Parent')
+// console.log(parent)
 
-// let parentt=document.querySelector('.parent')
-// console.log(parentt)
+// go from child to parent
+const day1=document.querySelector('.day')
+// console.log(day1.parentElement)  
+
+
+console.log(parent.childNodes)

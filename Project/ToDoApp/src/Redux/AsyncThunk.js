@@ -14,10 +14,10 @@ export const fetchUSer=createAsyncThunk('Auth/fetchUser',async()=>{
 
 export const loginUser=createAsyncThunk('Auth/loginUser',async(payload)=>{
     try {
-        console.log(payload)
+      //  console.log(payload)
         // return {state:true,data:{"name":"Tushar"}}
         const user=await authservice.Login(payload)
-        console.log( "Thsi si LOGIN FUN RESP " ,user)
+//        console.log( "Thsi si LOGIN FUN RESP " ,user)
         return user
 
     } catch (error) {

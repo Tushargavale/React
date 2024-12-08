@@ -12,7 +12,6 @@ const Router=createBrowserRouter(createRoutesFromElements(
     <Route index element={<App/>} ></Route>
     <Route path='/Home' element={<Home></Home>} ></Route>
     <Route path='/Contact' element={<Contact></Contact>} ></Route>
-    
     <Route path='/About'  element={<ProtectedRoute child={<About></About>} ></ProtectedRoute>} ></Route>
     </Route>
 ))
