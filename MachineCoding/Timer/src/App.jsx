@@ -30,22 +30,7 @@ const ShowData=()=>{
 
 {/* <Timer></Timer> */} 
 {/* <Counter></Counter> */}
-<div className="form">
-  <label>Input</label>
-  <input type="text" name='username' value={user.username} onChange={(e)=>{Handler(e)}} />
-  <br /><br /><br />
 
-  <label>Password</label>
-  <input type="text" name='password' value={user.password} onChange={(e)=>{Handler(e)}} /> 
-  <br /><br />
-
-  <label>Email</label>
-  <input type="text" name='email' value={user.email} onChange={(e)=>{Handler(e)}} />
-  <br />
-  <br />
-  <button onClick={ShowData} >Submit</button>
-
-</div>
     </>
   )
 }

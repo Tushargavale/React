@@ -1,6 +1,6 @@
 import { useCallback, useState,useMemo, useEffect } from 'react'
 import Item1 from './Component/Item1'
-import './App.css'
+// import './App.css'
 
 function App() {
 
