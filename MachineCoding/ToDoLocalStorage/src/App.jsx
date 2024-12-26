@@ -16,14 +16,13 @@ function App() {
 
 
   const [newtodo,setNewTodo]=useState({
-    id:'',
     value:'',
     disabled:false
   })
 
   const handler=(e)=>{
     setNewTodo((prev)=> {
-      return {...prev,[e.target.name]:e.target.value,id:todo.length}
+      return {...prev,[e.target.name]:e.target.value}
     } )
    
   }
@@ -36,35 +35,44 @@ function App() {
     })
 
     setNewTodo({
-      id:'',
+    
       value:'',
       disabled:false
     })
+
+    //localStorage.setItem('todos',JSON.stringify(todo))
   }
 
   useEffect(()=>{
 
     if(todo.length)
       localStorage.setItem('todos',JSON.stringify(todo))
+
+    console.log(todo)
   },[todo])
 
 
-  const onupdate=(e)=>{
+  const onupdate=(e,index)=>{
 
+    console.log(todo,index)
    if(e.disabled==true)
    {
      setTodo((prev)=>{
       return prev.map((value,key)=>{
-        if(value.id==e.id)
+        if(key==index)
+         {
+          console.log(index ,'is ')
           return {...value,['disabled']:false}
+         }
         return value
       })
      })
-     localStorage.setItem('todos',JSON.stringify(todo))
+     console.log(todo)
+     //localStorage.setItem('todos',JSON.stringify(todo))
 
    }else{
-    let Tmp= todo.filter((value,index)=>{
-      if(value.id==e.id)
+    let Tmp= todo.filter((value,ind)=>{
+      if(index==ind)
       {
         value.disabled=!value.disabled
         return value
@@ -81,12 +89,24 @@ function App() {
     
   }
 
+  const handleDelete=(index)=>{
+    console.log(index)
 
-  const handleInput=(e,v)=>{
-    let {name,value}=e.target
+    let itm=todo.filter((val,ind)=>{
+      if(ind!=index)
+        return val
+    })
+
+    setTodo(itm)
+    
+  }
+
+
+  const handleInput=(e,ind)=>{
+    let {name,value}=e.target 
     setTodo((prev)=>{
-      return prev.map((value,key)=>{
-        return value.id==v.id?{...value,[e.target.name]:e.target.value}:value
+      return prev.map((td,key)=>{
+        return key==ind?{...td,[name]:value}:td
        })
       })
   }
@@ -94,14 +114,13 @@ function App() {
   return (
     <>
 
-    <h1>Welcome To Bangalore</h1>
-    <h1>This is TEST BRANCH</h1>
+  <h1>This is TEST BRANCH</h1>
    <div className="cont">
    <InputTodo handler={handler} newtodo={newtodo.value}    handlesubmit={handlesubmit}  ></InputTodo>
     {todo.length?<>
     
-    {todo.map((value)=>{
-      return <Todo value={value} handleInput={handleInput}  onupdate={onupdate} ></Todo>
+    {todo.map((value,ind)=>{
+      return <Todo value={value} handleInput={handleInput} handleDelete={handleDelete}  onupdate={onupdate} index={ind}  ></Todo>
     })}
         
     </>:null}

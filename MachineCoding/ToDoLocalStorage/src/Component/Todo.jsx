@@ -1,8 +1,8 @@
 import React from 'react'
 import './Todo.css'
-function Todo({disabled,value,onupdate,btnName,handleInput}) {
+function Todo({disabled,value,onupdate,btnName,handleInput,index,handleDelete}) {
 
-
+console.log(value)
 
 
   return (
@@ -13,13 +13,13 @@ function Todo({disabled,value,onupdate,btnName,handleInput}) {
             <input
              type="text" value={value.value}
               disabled={!value.disabled} 
-              onChange={(e)=>handleInput(e,value)}
+              onChange={(e)=>handleInput(e,index)}
               name='value'  
               />
-             <button onClick={()=>onupdate(value)} >
+             <button onClick={()=>onupdate(value,index)} >
              {value.disabled?'update':'Edit'}
             </button>
-            <button>Delete</button>
+            <button onClick={()=>handleDelete(index)} >Delete</button>
         </div>
     </div>
     
