@@ -1,6 +1,7 @@
 import React from "react";
 import {useNavigate ,Link  } from 'react-router-dom'
 import { useSelector } from "react-redux";
+import { logOut } from "../../../Redux/Feture/userSlice";
 
 
 export const Header=()=>{
@@ -66,6 +67,8 @@ const NavItem=[
           ) : null
         )
       }
+
+      {Authenticated?<button onClick={logOut()} ></button>:null}
     </ul>
   </nav>
 </header>

@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body{
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* 
+ul{
+    display: flex;
+    border: 2px solid black;
+    background-color: white;
+   
+}
+
+li{
+    list-style-position: inside;
+    list-style: none;
+    width: 33%;
+    height: 200px;
+    border: 2px solid black;
+    padding: 1rem;
+    text-align: justify;
+    margin: 0.3rem;
+    border-radius: 2rem;
+    background-color: rgb(39, 161, 161);
+    box-shadow: 10px;
+    color: white;
+    line-height: 1.5;
+
+} */
+
+
+body{
+    padding: 13rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    border: 2px solid black;
+    width: 350px;
+    height: 50vh;
+    background-color: blue;
+   
+}
+
+
+
+.heading{
+    background-color: gold;
+    padding: 1rem;
+    text-align: center;
+    color: darkblue;
+    height: 25%;
+}
+
+
+.inputfield{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    height: 48%;
+    background-color: white
+ 
+}
+
+
+.inputfield input{
+    font-size: 22px;
+    width: 100%;
+    padding: 5px;
+}
+
+.buttons{
+   display: flex;
+   flex-direction: column;
+   
+   
+  
+}
+
+
+.buttons button{
+    padding: 0.7rem;
+    font-size: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+} 
+
+
+
+
+
+

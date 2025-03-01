@@ -111,10 +111,19 @@ function App() {
       })
   }
 
+
+  const Sort=()=>{
+    let td=todo
+    td.sort((a,b)=>a.value[0]-b.value[0])
+    console.log(td)
+    //  setTodo(td)
+  }
+
   return (
     <>
 
   <h1>This is TEST BRANCH</h1>
+  <button onClick={Sort} >SORT</button>
    <div className="cont">
    <InputTodo handler={handler} newtodo={newtodo.value}    handlesubmit={handlesubmit}  ></InputTodo>
     {todo.length?<>

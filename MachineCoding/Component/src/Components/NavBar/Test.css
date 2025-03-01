@@ -1,0 +1,75 @@
+
+html{
+    font-size: 62.5%;
+}
+
+/* #################################  */
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa ;
+    position: fixed;
+    width: 100%;
+    background: #ffffff;
+    color: black;
+    opacity: 0.85;   /*  Transpacity , we fixed Navbar so it should be transperent   */
+    z-index: 10;
+    top: 10px;    /*Move NavBAr To Top Of page*/
+
+}
+
+
+.navbarcontainer{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+
+
+.menu-item {
+    order: 3;
+    display: flex;
+
+}
+
+.menu-item li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+   
+}
+
+.logo{
+order: 1;
+font-size: 3rem;
+}
+
+.navbar a{
+    color: #1b0505;
+    text-decoration: none;   /* it remove the underline     */
+    font-weight: 500;  /* it Bold the Font */
+}
+
+.navbar a:hover{      /*it Add Hover Property*/
+    color: #3d4c49;
+}
+
+
+
+
+
+
+/* navBar Styling */
+/* For DeskTop Mode */
+
+.navbar input[type="checkbox"],
+.navbar .humbergerline{
+    display: none;
+}

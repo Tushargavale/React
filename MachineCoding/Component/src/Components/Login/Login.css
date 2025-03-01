@@ -1,0 +1,114 @@
+
+
+.InputField{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    
+}
+
+.InputField input{
+    background-color: white;
+    color: black;
+    padding: 7px;
+    font-size: 20px;
+    width: 300px;
+    /* width: 100%; */
+    justify-content: flex-start;
+    display: flex;
+}
+
+
+.inp {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #555; /* Light gray text */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    outline: none;
+    
+  }
+
+
+.input label{
+    font-size: 20px;
+    color: #333; /* Dark text for label */
+    margin-bottom: 4px;
+    font-weight: 500; /* Semi-bold for emphasis */
+    
+}
+
+
+.InputField .input {
+    display: flex;
+    justify-content: flex-start; /* Align label to the start */
+    align-items: center; /* Center label vertically if needed */
+    margin-bottom: 4px; /* Adds spacing between label and input field */
+  }
+
+
+
+
+
+  .LoginForm{
+    width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    align-content: center;
+    margin: auto;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    
+  }
+
+  .LoginForm .inputBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    gap: 20px;
+    
+    
+    
+  }
+.LoginForm .button{
+    display: flex;
+    flex-direction: column;
+   margin-top: auto;
+   
+ 
+}
+
+
+
+  .LoginForm .button button{
+    width: 100%;
+    height: 50px;
+    border-radius: 0px;
+    color: black;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+
+  }
+
+  .LoginForm .Login{
+    background-color: rgb(83, 83, 203);
+  }
+
+  .LoginForm .Signup{
+    background-color: rgb(218, 102, 102);
+  }
+
+
+  .title{
+    margin-top: auto;
+  }
+
+  .title span{
+    font-size: 25px;
+    font-weight: 600;
+  }
