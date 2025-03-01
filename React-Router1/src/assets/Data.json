@@ -1,0 +1,34 @@
+{
+    "Jobs":[
+        {
+            "id":1,
+            "title":"Sr. React Developer",
+            "Salary":50000,
+            "Location":"USA"
+        },
+         {
+            "id":2,
+            "title":"Backend Developer",
+            "Salary":50000,
+            "Location":"USA"
+        },
+        {
+            "id":3,
+            "title":"Data base Engineer",
+            "Salary":50000,
+            "Location":"USA"
+        } ,
+        {
+            "id":4,
+            "title":"System  Administrator",
+            "Salary":50000,
+            "Location":"Bangalore"
+        },
+        {
+            "id":5,
+            "title":"Network Engineer",
+            "Salary":50000,
+            "Location":"Pune.."
+        }
+    ]
+}
