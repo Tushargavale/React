@@ -1,0 +1,46 @@
+
+
+.NavBarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.common, .condition {
+  display: flex;
+  gap: 15px;
+}
+
+.item {
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+button{
+text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  background-color: #333;
+}
+
+
+
+.item:hover ,button {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.item.active  {
+  background-color: #007BFF;
+}
+
+
+
+
+
