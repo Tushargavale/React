@@ -18,7 +18,7 @@ function App() {
   const router=createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<RootLayout></RootLayout>} >
-         <Route index element={<Home></Home>}   />
+         <Route index element={<Home></Home>}/>
           <Route path='about' element={<About></About>} />     
          
          {/* Here we are using nested route inside the contact path */}
@@ -34,9 +34,6 @@ function App() {
           </Route>
 
         <Route path='*' element={<h1>Not Found</h1>} />
-
-
-
 
       </Route>
     )

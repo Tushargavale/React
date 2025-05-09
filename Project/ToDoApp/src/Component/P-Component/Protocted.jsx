@@ -32,9 +32,7 @@ function Protocted({child}) {
 
 
 
-  return (
-   (loader ? <Dummy></Dummy>:  <> {child} </> )
-  )
+   return loader ? children : <h1>Loading...</h1>;  // Fixed JSX return 
 }
 
 export default Protocted

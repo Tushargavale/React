@@ -1,0 +1,42 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: auto 1fr auto; 
+} 
+
+
+.item{
+    background-color: rgb(1, 11, 1);
+    border: 2px solid black;
+}
+
+.item2{
+    overflow-y: auto;
+    padding: auto;
+   align-self: stretch;
+   background-color: aliceblue;
+   padding: auto;
+}
+
+.header{
+    height: 10vh;
+    position: sticky;
+    z-index: 100;
+}
+
+.footer{
+    position: sticky;
+    height: 8vh;
+}

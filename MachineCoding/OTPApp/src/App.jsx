@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-
+import OTPComp from './OTPComp'
 import './App.css'
 
 function App() {
@@ -54,31 +54,35 @@ const handleKey=(e,index)=>{
 
 
   return (
-    <>
-     <div className="container" key={otp.length} >
-      {otp.map((val,index)=>{
-        return (<>
-        <div className="otp" key={index} >
-          <input type="text" 
+    // <>
+    //  <div className="container" key={otp.length} >
+    //   {otp.map((val,index)=>{
+    //     return (<>
+    //     <div className="otp" key={index} >
+    //       <input type="text" 
 
-          key={index} 
-          ref={(input)=>{
-           return inputRef.current[index]=input
-          }}
-          maxLength={1}
-          typeof='text'
-          value={val}
-          onChange={(e)=>{handleChange(index,e)}}
-          onClick={(e)=>handleClick(e,index)}
-          onKeyUp={(e)=>{handleKey(e,index)}}
+    //       key={index} 
+    //       ref={(input)=>{
+    //        return inputRef.current[index]=input
+    //       }}
+    //       maxLength={1}
+    //       typeof='text'
+    //       value={val}
+    //       onChange={(e)=>{handleChange(index,e)}}
+    //       onClick={(e)=>handleClick(e,index)}
+    //       onKeyUp={(e)=>{handleKey(e,index)}}
          
-        />
-        </div>
-     </>)
+    //     />
+    //     </div>
+    //  </>)
        
 
-      })}
-     </div>
+    //   })}
+    //  </div>
+    // </>
+    <>
+    <OTPComp/>
+    
     </>
   )
 }

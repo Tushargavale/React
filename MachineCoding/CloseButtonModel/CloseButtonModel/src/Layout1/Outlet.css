@@ -1,0 +1,32 @@
+.outlet-container{
+   display: grid;
+   /* border: 2px solid black; */
+   gap: 5rem;
+   max-width: 1200px;
+   grid-template-columns: repeat(4,0.70fr);
+   /* grid-template-columns: repeat(auto-fit, minmax(250px, 0.75fr)); */
+   justify-items: center;
+   padding-top: 3rem;
+   padding-bottom: 3rem;
+   align-self: stretch;
+   margin: 3rem;
+    
+}
+
+
+@media(max-width: 1024px) {
+    .outlet-container {
+       grid-template-columns: repeat(3,0.7fr);
+    }
+}
+
+
+@media(max-width: 604px) {
+    .outlet-container {
+       grid-template-columns: repeat(2,0.7fr);
+    }
+}
+
+
+
+
